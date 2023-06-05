@@ -10,8 +10,8 @@ class BikeClub
   end
 
   def can_ride?(ride)
-  can_ride = []
-  @bikers.each do |biker|
+    can_ride = []
+    @bikers.each do |biker|
       if biker.acceptable_terrain.include?(ride.terrain) && ride.total_distance < biker.max_distance
         can_ride << biker
       else
@@ -22,10 +22,33 @@ class BikeClub
   end
 
   def most_rides
-
+    highest_number_of_rides = 0
+    most_ridden = nil
+    @bikers.each do |biker|
+      if biker.rides.values.flatten.length > highest_number_of_rides
+        highest_number_of_rides = biker.rides.values.flatten.length
+        most_ridden = biker
+      else
+      end
+    end
+    most_ridden
   end
 
   def best_time(ride)
-
+    fastest_time = 999999
+    biker_with_fastest_time = nil
+    @bikers.each do |biker|
+      if biker.rides.include?(ride)
+        biker.rides[ride].each do |time|
+          if time < fastest_time
+            fastest_time = time
+            biker_with_fastest_time = biker
+          else
+          end
+        end
+      else
+      end
+    end
+    biker_with_fastest_time
   end
 end
