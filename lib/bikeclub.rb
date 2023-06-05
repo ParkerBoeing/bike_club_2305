@@ -51,4 +51,17 @@ class BikeClub
     end
     biker_with_fastest_time
   end
+
+  # def start_group_ride(ride)
+  #   times = {}
+  #   @bikers.each do |biker|
+  #     if @acceptable_terrain.include?(ride.terrain) && ride.total_distance < @max_distance
+  #       biker_data = {
+  #         start_time: Time.now.to_i,
+  #         finish_time: nil
+  #       }
+  #       times[biker] = biker_data
+  #      end
+  #   end
+  # end
 end
