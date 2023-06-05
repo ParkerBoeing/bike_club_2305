@@ -10,7 +10,6 @@ describe Ride do
   it 'has a name, distance, terrain, loop?, and total_distance functions' do
     ride1 = Ride.new({name: "Walnut Creek Trail", distance: 10.7, loop: false, terrain: :hills})
     ride2 = Ride.new({name: "Town Lake", distance: 14.9, loop: true, terrain: :gravel})
-    require 'pry'; binding.pry
     expect(ride1.name).to eq("Walnut Creek Trail")
     expect(ride1.distance).to eq(10.7)
     expect(ride1.terrain).to eq(:hills)
