@@ -74,7 +74,13 @@ describe Biker do
     biker.log_ride(ride1, 91.1)
     biker.log_ride(ride2, 60.9)
     biker.log_ride(ride2, 61.6)
+    biker2 = Biker.new("Athena", 15)
+    biker2.learn_terrain!(:gravel)
+    biker2.learn_terrain!(:hills)
+    biker2.log_ride(ride2, 65.0)
     expect(biker.personal_record(ride1)).to eq 91.1
     expect(biker.personal_record(ride2)).to eq 60.9
+    expect(biker2.personal_record(ride2)).to eq 65.0
+    expect(biker2.personal_record(ride1)).to eq false
   end
 end
