@@ -8,7 +8,7 @@ class Ride
   end
 
   def loop?
-    if loop
+    if @loop
       true
     else
       false
@@ -16,7 +16,7 @@ class Ride
   end
 
   def total_distance
-    if loop == false
+    if @loop == false
       total_distance = @distance * 2
     else
       total_distance = @distance
